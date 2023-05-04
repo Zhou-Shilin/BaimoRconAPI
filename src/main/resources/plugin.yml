@@ -1,6 +1,32 @@
-name: ${project.name}
-main: net.cyberflame.plugin.Main
-version: ${project.version}
-description: Plugin
-website: https://cyberfla.me/
-author: CyberFlame
+name: BaimoRconAPI
+main: top.baimoqilin.BaimoRconAPI.Main
+version: 1.0.0
+description: A Bukkit Plugin that add some APIs for rcon scripts
+author: BaimoQilin
+commands:
+  baimoapi:
+    description: Main command for the BaimoRconAPI plugin.
+    usage: /baimoapi <subcommand> [args...]
+    aliases: [api]
+    permission: baimoapi.use
+    subcommands:
+      getpos:
+        description: Get the position of a player.
+        usage: /baimoapi getpos <player>
+        permission: baimoapi.getpos
+      getuuid:
+        description: Get the UUID of a player.
+        usage: /baimoapi getuuid <player>
+        permission: baimoapi.getuuid
+      getworld:
+        description: Get the world of a player.
+        usage: /baimoapi getworld <player>
+        permission: baimoapi.getworld
+      gethealth:
+        description: Get the health of a player.
+        usage: /baimoapi gethealth <player>
+        permission: baimoapi.gethealth
+      gethunger:
+        description: Get the hunger level of a player.
+        usage: /baimoapi gethunger <player>
+        permission: baimoapi.gethunger
