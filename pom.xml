@@ -7,13 +7,27 @@
     <artifactId>BaimoRconAPI</artifactId>
     <version>1.0.0</version>
     <name>BaimoRconAPI</name>
+    <organization>
+        <name>AuthMe-Team</name>
+        <url>https://github.com/AuthMe</url>
+    </organization>
     <dependencies>
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.19.2-R0.1-SNAPSHOT</version>
-        </dependency>
+            <version>1.13.2-R0.1-SNAPSHOT</version>
+</dependency>
     </dependencies>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <bukkitVersion>1.13.2-R0.1-SNAPSHOT</bukkitVersion>
+    </properties>
+    <repositories>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
     <build>
         <defaultGoal>clean install</defaultGoal>
         <finalName>${project.name}</finalName>
