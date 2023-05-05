@@ -9,7 +9,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
 public class CommandListener implements CommandExecutor {
-    
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (label.equalsIgnoreCase("baimoapi")) {
@@ -65,12 +65,55 @@ public class CommandListener implements CommandExecutor {
                         sender.sendMessage("ERROR=02, Player not found.");
                         return false;
                     }
+                } else if (args[1].equalsIgnoreCase("getExp")) {
+                    Player target = Bukkit.getPlayer(args[2]);
+                    if (target != null) {
+                        sender.sendMessage("Experience=" + target.getExp());
+                        return true;
+                    } else {
+                        sender.sendMessage("ERROR=02, Player not found.");
+                        return false;
+                    }
+                } else if (args[1].equalsIgnoreCase("getExpLevel")) {
+                    Player target = Bukkit.getPlayer(args[2]);
+                    if (target != null) {
+                        sender.sendMessage("Experience Level=" + target.getLevel());
+                        return true;
+                    } else {
+                        sender.sendMessage("ERROR=02, Player not found.");
+                        return false;
+                    }
+                } else if (args[1].equalsIgnoreCase("getAllowFlight")) {
+                    Player target = Bukkit.getPlayer(args[2]);
+                    if (target != null) {
+                        sender.sendMessage("Allow Flight=" + target.getAllowFlight());
+                        return true;
+                    } else {
+                        sender.sendMessage("ERROR=02, Player not found.");
+                        return false;
+                    }
+                } else if (args[1].equalsIgnoreCase("getSpeed")) {
+                    Player target = Bukkit.getPlayer(args[2]);
+                    if (target != null) {
+                        if (args.length == 3 || args[3].equalsIgnoreCase("walk")) {
+                            sender.sendMessage("Walk Speed=" + target.getWalkSpeed());
+                        } else if (args[3].equalsIgnoreCase("fly")) {
+                            sender.sendMessage("Fly Speed=" + target.getFlySpeed());
+                        } else {
+                            sender.sendMessage("ERROR=01, Invalid subcommand.");
+                            return false;
+                        }
+                        return true;
+                    } else {
+                        sender.sendMessage("ERROR=02, Player not found.");
+                        return false;
+                    }
                 } else {
-                    sender.sendMessage(ChatColor.RED + "ERROR=01, Invalid subcommand.");
+                    sender.sendMessage("ERROR=01, Invalid subcommand.");
                     return false;
                 }
             } else {
-                sender.sendMessage(ChatColor.RED + "ERROR=01, Invalid command.");
+                sender.sendMessage("ERROR=01, Invalid command.");
                 return false;
             }
         }

@@ -1,7 +1,7 @@
 name: BaimoRconAPI
 main: top.baimoqilin.BaimoRconAPI.Main
-version: 1.0.0
-description: A Bukkit Plugin that add some APIs for rcon scripts
+version: 1.1.0
+description: A Bukkit Plugin that adds some APIs for rcon scripts.
 author: BaimoQilin
 commands:
   baimoapi:
@@ -30,3 +30,19 @@ commands:
         description: Get the hunger level of a player.
         usage: /baimoapi gethunger <player>
         permission: baimoapi.gethunger
+      getexp:
+        description: Get the experience of a player.
+        usage: /baimoapi getexp <player>
+        permission: baimoapi.getexp
+      getexplevel:
+        description: Get the experience level of a player.
+        usage: /baimoapi getexplevel <player>
+        permission: baimoapi.getexplevel
+      getallowflight:
+        description: Get whether a player can fly or not.
+        usage: /baimoapi getallowflight <player>
+        permission: baimoapi.getallowflight
+      getspeed:
+        description: Get the speed of a player.
+        usage: /baimoapi getspeed <player> [walk/fly]
+        permission: baimoapi.getspeed
