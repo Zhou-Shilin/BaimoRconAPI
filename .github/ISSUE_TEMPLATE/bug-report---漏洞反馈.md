@@ -2,7 +2,7 @@
 name: Bug report / 漏洞反馈
 about: Create a report to help us improve / 反馈一个Bug
 title: "[BUG] "
-labels: ''
+labels: enhancement
 assignees: ''
 
 ---
