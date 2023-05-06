@@ -1,5 +1,5 @@
 # BaimoRconAPI - `Alpha`
-(English)[https://github.com/Zhou-Shilin/BaimoRconAPI/blob/master/README-CN.md] | Chinese
+[English](https://github.com/Zhou-Shilin/BaimoRconAPI/blob/master/README-CN.md) | Chinese
 
 BaimoRconAPI 是一个 Minecraft 插件，它允许rcon脚本使用命令来获取信息和控制服务器。这些指令可以从游戏内控制台或远程客户端执行。
 
