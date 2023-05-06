@@ -17,9 +17,9 @@ The plugin is still in Alpha, there's only a few APIs and some of them are *Unte
 3. Restart the server.
 
 ## Usage
-To use BaimoRconAPI, you must have permission to execute the `baimoapi` command. By default, only players with the `op` or `baimoapi.use` permission node can execute this command.
+Please visit [me](https://baimoqilin.gitbook.io/baimorconapi/documentation) for the full documentation.
 
-### API Commands
+### Quick Start
 
 #### Player Information
 To get information on a player, use the following command:

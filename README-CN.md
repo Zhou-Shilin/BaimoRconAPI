@@ -6,7 +6,7 @@ BaimoRconAPI 是一个 Minecraft 插件，它允许rcon脚本使用命令来获�
 ## 警告
 该插件仍处于 Alpha 阶段，只有少量的 API，其中一些*还没有测试*。**现在不要在生产环境中使用它。**
 
-## 特征
+## 功能
 * 获取玩家信息：位置，UUID，世界，生命值，饥饿度，经验，经验等级，允许飞行，速度等。
 * 设置玩家信息：显示名称，指南针目标等。
 * 正在施工：有关方块和实体的内容。
@@ -17,9 +17,9 @@ BaimoRconAPI 是一个 Minecraft 插件，它允许rcon脚本使用命令来获�
 3. 重新启动服务器。
 
 ## 用法
-要使用 BaimoRconAPI，您必须有执行 `baimoapi` 命令的权限。默认情况下，只有具有 `op` 或 `baimoapi.use` 权限节点的玩家才能执行此命令。
+点[我](https://baimoqilin.gitbook.io/baimorconapi/documentation)查看完整文档。
 
-### API 命令
+### 快速开始
 
 #### 玩家信息
 要获取有关玩家的信息，请使用以下命令：
