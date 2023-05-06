@@ -1,6 +1,5 @@
 package top.baimoqilin.BaimoRconAPI;
 
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -14,7 +13,7 @@ public class CommandListener implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (label.equalsIgnoreCase("baimoapi")) {
             if (args.length < 3) {
-                sender.sendMessage(ChatColor.RED + "ERROR=01, Invalid command.");
+                sender.sendMessage("ERROR=01, Invalid command.");
                 return false;
             }
             if (args[0].equalsIgnoreCase("player")) {
@@ -108,6 +107,63 @@ public class CommandListener implements CommandExecutor {
                         sender.sendMessage("ERROR=02, Player not found.");
                         return false;
                     }
+                } else if (args[1].equalsIgnoreCase("setDisplayName")) {
+                    Player target = Bukkit.getPlayer(args[2]);
+                    if (target != null) {
+                        String displayName = args[3];
+                        target.setDisplayName(displayName);
+                        sender.sendMessage("msg=Success");
+                        return true;
+                    } else {
+                        sender.sendMessage("ERROR=02, Player not found.");
+                        return false;
+                    }
+                } else if (args[1].equalsIgnoreCase("setCompassTarget")) {
+                    Player target = Bukkit.getPlayer(args[2]);
+                    if (target != null) {
+                        int x = Integer.parseInt(args[3]);
+                        int y = Integer.parseInt(args[4]);
+                        int z = Integer.parseInt(args[5]);
+                        Location targetLocation = new Location(target.getWorld(), x, y, z);
+                        target.setCompassTarget(targetLocation);
+                        sender.sendMessage("msg=Success");
+                        return true;
+                    } else {
+                        sender.sendMessage("ERROR=02, Player not found.");
+                        return false;
+                    }
+                } else if (args[1].equalsIgnoreCase("getLocale")) {
+                    Player target = Bukkit.getPlayer(args[2]);
+                    if (target != null) {
+                        sender.sendMessage("Locale=" + target.getLocale());
+                        return true;
+                    } else {
+                        sender.sendMessage("ERROR=02, Player not found.");
+                        return false;
+                    }
+                } else if (args[1].equalsIgnoreCase("getClientViewDistance")) {
+                    Player target = Bukkit.getPlayer(args[2]);
+                    if (target != null) {
+                        sender.sendMessage("Client View Distance=" + target.getClientViewDistance());
+                        return true;
+                    } else {
+                        sender.sendMessage("ERROR=02, Player not found.");
+                        return false;
+                    }
+                } else if (args[1].equalsIgnoreCase("getBedSpawnLocation")) {
+                    Player target = Bukkit.getPlayer(args[2]);
+                    if (target != null) {
+                        Location bedSpawnLocation = target.getBedSpawnLocation();
+                        if ( bedSpawnLocation != null ) {
+                            sender.sendMessage("Bed Spawn Location=" + bedSpawnLocation.getWorld().getName() + "," + bedSpawnLocation.getX() + "," + bedSpawnLocation.getY() + "," + bedSpawnLocation.getZ());
+                        } else {
+                            sender.sendMessage("Bed Spawn Location=none");
+                        }
+                        return true;
+                    } else {
+                        sender.sendMessage("ERROR=02, Player not found.");
+                        return false;
+                    }
                 } else {
                     sender.sendMessage("ERROR=01, Invalid subcommand.");
                     return false;
@@ -118,5 +174,5 @@ public class CommandListener implements CommandExecutor {
             }
         }
         return false;
-     }
+    }
 }

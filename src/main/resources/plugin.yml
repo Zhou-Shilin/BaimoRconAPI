@@ -1,6 +1,6 @@
 name: BaimoRconAPI
 main: top.baimoqilin.BaimoRconAPI.Main
-version: 1.1.0
+version: 1.0.2
 description: A Bukkit Plugin that adds some APIs for rcon scripts.
 author: BaimoQilin
 commands:
@@ -46,3 +46,23 @@ commands:
         description: Get the speed of a player.
         usage: /baimoapi getspeed <player> [walk/fly]
         permission: baimoapi.getspeed
+      setdisplayname:
+        description: Set the display name of a player.
+        usage: /baimoapi setdisplayname <player> <new-display-name>
+        permission: baimoapi.setdisplayname
+      setcompasstarget:
+        description: Set the compass target of a player.
+        usage: /baimoapi setcompasstarget <player> <x> <y> <z>
+        permission: baimoapi.setcompasstarget
+      getlocale:
+        description: Get the locale of a player.
+        usage: /baimoapi getlocale <player>
+        permission: baimoapi.getlocale
+      getclientviewdistance:
+        description: Get the client view distance of a player.
+        usage: /baimoapi getclientviewdistance <player>
+        permission: baimoapi.getclientviewdistance
+      getbedspawnlocation:
+        description: Get the bed spawn location of a player.
+        usage: /baimoapi getbedspawnlocation <player>
+        permission: baimoapi.getbedspawnlocation
