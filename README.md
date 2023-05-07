@@ -1,7 +1,7 @@
 # BaimoRconAPI - `Alpha`
 English | [Chinese](https://github.com/Zhou-Shilin/BaimoRconAPI/blob/master/README-CN.md)
 
-BaimoRconAPI is a Minecraft plugin that allows rcon scripts to use commands to get info and control the server. This API is exposed via a simple command interface that can be accessed from the in-game console or from a remote client.
+BaimoRconAPI is a Minecraft plugin that allows rcon scripts to use commands to get info and control the server. 
 
 ## Warning
 The plugin is still in Alpha, there's only a few APIs and some of them are *Untested*. **Do not use it in production environment now.**
@@ -10,6 +10,14 @@ The plugin is still in Alpha, there's only a few APIs and some of them are *Unte
 * Get player information: position, UUID, world, health, hunger, experience, experience level, allow flight, speed, etc.
 * Set player information: display name, compass target, etc.
 * In development: about block and entity, etc.
+
+## TODO
+ - [x] Get/Modify player information
+ - [ ] Get/Modify block information
+ - [ ] Get/Modify entity's NBT
+ - [ ] Get/Modify item's NBT
+ - [ ] Support for adding pseudo-listeners
+ - [ ] Support for adding custom commands
 
 ## Installation
 1. Download the latest release from the [releases page](https://github.com/Zhou-Shilin/BaimoRconAPI/releases).
