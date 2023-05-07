@@ -1,6 +1,6 @@
 name: BaimoRconAPI
 main: top.baimoqilin.BaimoRconAPI.Main
-version: 1.0.5
+version: 1.0.6
 description: A Bukkit Plugin that adds some APIs for rcon scripts.
 author: BaimoQilin
 
@@ -64,12 +64,9 @@ commands:
           getID:
             description: Get the ID of a block
             usage: /<command> block getID <x> <y> <z>
-          getNBTAll:
-            description: Get all NBT tags of a block or container
-            usage: /<command> block getNBTAll <x> <y> <z>
-          getNBT:
-            description: Get a specific NBT tag of a block or container
-            usage: /<command> block getNBT <x> <y> <z> <tagpath>
-          setNBT:
-            description: Set a specific NBT tag of a block or container
-            usage: /<command> block setNBT <x> <y> <z> <tagpath> <value>
+          getFace:
+            description: Get the face of a block
+            usage: /<command> block getFace <x> <y> <z>
+          searchForBlock:
+            description: Search for block in an area
+            usage: /<command> block searchForBlock <x1> <y1> <z1> <x2> <y2> <z2> <block-id>
