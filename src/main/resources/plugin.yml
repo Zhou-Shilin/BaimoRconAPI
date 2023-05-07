@@ -1,68 +1,75 @@
 name: BaimoRconAPI
 main: top.baimoqilin.BaimoRconAPI.Main
-version: 1.0.2
+version: 1.0.5
 description: A Bukkit Plugin that adds some APIs for rcon scripts.
 author: BaimoQilin
+
 commands:
   baimoapi:
-    description: Main command for the BaimoRconAPI plugin.
-    usage: /baimoapi <subcommand> [args...]
-    aliases: [api]
+    description: Access BaimoRconAPI commands
+    usage: /<command> <player/block> <subcommand> [args...]
     permission: baimoapi.use
+    aliases: [api]
     subcommands:
-      getpos:
-        description: Get the position of a player.
-        usage: /baimoapi getpos <player>
-        permission: baimoapi.getpos
-      getuuid:
-        description: Get the UUID of a player.
-        usage: /baimoapi getuuid <player>
-        permission: baimoapi.getuuid
-      getworld:
-        description: Get the world of a player.
-        usage: /baimoapi getworld <player>
-        permission: baimoapi.getworld
-      gethealth:
-        description: Get the health of a player.
-        usage: /baimoapi gethealth <player>
-        permission: baimoapi.gethealth
-      gethunger:
-        description: Get the hunger level of a player.
-        usage: /baimoapi gethunger <player>
-        permission: baimoapi.gethunger
-      getexp:
-        description: Get the experience of a player.
-        usage: /baimoapi getexp <player>
-        permission: baimoapi.getexp
-      getexplevel:
-        description: Get the experience level of a player.
-        usage: /baimoapi getexplevel <player>
-        permission: baimoapi.getexplevel
-      getallowflight:
-        description: Get whether a player can fly or not.
-        usage: /baimoapi getallowflight <player>
-        permission: baimoapi.getallowflight
-      getspeed:
-        description: Get the speed of a player.
-        usage: /baimoapi getspeed <player> [walk/fly]
-        permission: baimoapi.getspeed
-      setdisplayname:
-        description: Set the display name of a player.
-        usage: /baimoapi setdisplayname <player> <new-display-name>
-        permission: baimoapi.setdisplayname
-      setcompasstarget:
-        description: Set the compass target of a player.
-        usage: /baimoapi setcompasstarget <player> <x> <y> <z>
-        permission: baimoapi.setcompasstarget
-      getlocale:
-        description: Get the locale of a player.
-        usage: /baimoapi getlocale <player>
-        permission: baimoapi.getlocale
-      getclientviewdistance:
-        description: Get the client view distance of a player.
-        usage: /baimoapi getclientviewdistance <player>
-        permission: baimoapi.getclientviewdistance
-      getbedspawnlocation:
-        description: Get the bed spawn location of a player.
-        usage: /baimoapi getbedspawnlocation <player>
-        permission: baimoapi.getbedspawnlocation
+      player:
+        description: Access player info subcommands
+        usage: /<command> player <subcommand> <player>
+        subcommands:
+          getPos:
+            description: Get the position of a player
+            usage: /<command> player getPos <player>
+          getUuid:
+            description: Get the UUID of a player
+            usage: /<command> player getUuid <player>
+          getWorld:
+            description: Get the world name a player is in
+            usage: /<command> player getWorld <player>
+          getHealth:
+            description: Get the health of a player
+            usage: /<command> player getHealth <player>
+          getHunger:
+            description: Get the hunger level of a player
+            usage: /<command> player getHunger <player>
+          getExp:
+            description: Get the experience points of a player
+            usage: /<command> player getExp <player>
+          getExpLevel:
+            description: Get the experience level of a player
+            usage: /<command> player getExpLevel <player>
+          getAllowFlight:
+            description: Check if a player can fly
+            usage: /<command> player getAllowFlight <player>
+          getSpeed:
+            description: Get the walking or flying speed of a player
+            usage: /<command> player getSpeed <player> <walk/fly>
+          setDisplayName:
+            description: Set the display name of a player
+            usage: /<command> player setDisplayName <player> <name>
+          setCompassTarget:
+            description: Set the compass target for a player
+            usage: /<command> player setCompassTarget <player> <x> <y> <z>
+          getLocale:
+            description: Get the language locale of a player
+            usage: /<command> player getLocale <player>
+          getClientViewDistance:
+            description: Get the client view distance of a player
+            usage: /<command> player getClientViewDistance <player>
+          getBedSpawnLocation:
+            description: Get the bed spawn location of a player
+            usage: /<command> player getBedSpawnLocation <player>
+      block:
+        description: Access block info subcommands
+        usage: /<command> block <subcommand> <x> <y> <z> [args...]
+        subcommands:
+          getID:
+            description: Get the ID of a block
+            usage: /<command> block getID <x> <y> <z>
+          getNBTAll:
+            description: Get all NBT tags of a block or container
+            usage: /<command> block getNBTAll <x> <y> <z>
+          getNBT:
+            description: Get a specific NBT tag of a block or container
+            usage: /<command> block getNBT <x> <y> <z> <tagpath>
+          setNBT:
+            description: Set a specific NBT tag of a block or container
+            usage: /<command> block setNBT <x> <y> <z> <tagpath> <value>

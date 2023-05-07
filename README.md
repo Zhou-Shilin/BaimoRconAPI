@@ -13,7 +13,7 @@ The plugin is still in Alpha, there's only a few APIs and some of them are *Unte
 
 ## TODO
  - [x] Get/Modify player information
- - [ ] Get/Modify block information
+ - [x] Get/Modify block information
  - [ ] Get/Modify entity's NBT
  - [ ] Get/Modify item's NBT
  - [ ] Support for adding pseudo-listeners
