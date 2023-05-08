@@ -1,6 +1,6 @@
 name: BaimoRconAPI
 main: top.baimoqilin.BaimoRconAPI.Main
-version: 1.0.7
+version: Alpha1.3
 description: A Bukkit Plugin that adds some APIs for rcon scripts
 author: BaimoQilin
 

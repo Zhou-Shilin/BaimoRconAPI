@@ -1,6 +1,7 @@
 package top.baimoqilin.BaimoRconAPI;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import top.baimoqilin.BaimoRconAPI.Metrics;
 
 public class Main extends JavaPlugin {
     
