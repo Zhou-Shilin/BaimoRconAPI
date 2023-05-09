@@ -1,6 +1,6 @@
 # BaimoRconAPI - `Alpha`
-English | [Chinese](https://github.com/Zhou-Shilin/BaimoRconAPI/blob/master/README-CN.md)
-[!](https://hits.sh/github.com/Zhou-Shilin/BaimoRconAPI.svg)](https://hits.sh/github.com/Zhou-Shilin/BaimoRconAPI/)
+English | [Chinese](https://github.com/Zhou-Shilin/BaimoRconAPI/blob/master/README-CN.md)  
+[![Hits](https://hits.sh/github.com/Zhou-Shilin/BaimoRconAPI.svg)](https://hits.sh/github.com/Zhou-Shilin/BaimoRconAPI/)
 
 BaimoRconAPI is a Minecraft plugin that allows rcon scripts to use commands to get info and control the server. 
 
