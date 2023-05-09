@@ -1,5 +1,6 @@
 # BaimoRconAPI - `Alpha`
 English | [Chinese](https://github.com/Zhou-Shilin/BaimoRconAPI/blob/master/README-CN.md)
+[!](https://hits.sh/github.com/Zhou-Shilin/BaimoRconAPI.svg)](https://hits.sh/github.com/Zhou-Shilin/BaimoRconAPI/)
 
 BaimoRconAPI is a Minecraft plugin that allows rcon scripts to use commands to get info and control the server. 
 
@@ -49,3 +50,4 @@ To get a player's bed spawn location, use the following command:
 /baimoapi player getBedSpawnLocation <player-name>
 ```
 Replace `<player-name>` with the name of the player whose bed spawn location you want to get. Note that if the player has not set a bed spawn location, the command will return "Bed Spawn Location=none". If the player has set a bed spawn location, the command will return the name of the world, followed by the x, y, and z coordinates of the bed spawn location.
+
