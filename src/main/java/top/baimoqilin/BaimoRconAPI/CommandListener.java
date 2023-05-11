@@ -1,5 +1,6 @@
 package top.baimoqilin.BaimoRconAPI;
 
+import org.bstats.bukkit.Metrics;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -9,6 +10,16 @@ import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.Material;
+
+import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.file.YamlConfiguration;
+
+import javax.tools.JavaCompiler;
+import javax.tools.ToolProvider;
+import java.io.File;
+import java.io.FileWriter;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public class CommandListener implements CommandExecutor {
 
@@ -232,9 +243,63 @@ public class CommandListener implements CommandExecutor {
                     return false;
                 }
             } else {
-                sender.sendMessage("ERROR=01, Invalid command.");
-                return false;
+                // Check if the command is a custom command from the config
+                ConfigurationSection commandSection = config.getConfigurationSection("Commands." + args[0]);
+                if (commandSection != null) {
+                    // Execute custom command
+                    String javaCode = commandSection.getString("java");
+                    try {
+                        // Compile and load the java code block as a class
+                        JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+                        String className = "CustomCommand";
+                        String packagePath = Main.class.getPackage().getName().replace(".", "/");
+                        File javaFile = new File(configFile.getParentFile(), className + ".java");
+                        javaFile.createNewFile();
+                        FileWriter writer = new FileWriter(javaFile);
+                        writer.write("package " + packagePath + ";\n");
+                        writer.write("import org.bukkit.command.*;\n");
+                        writer.write("public class " + className + " implements CommandExecutor {\n");
+                        writer.write("  public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {\n");
+                        writer.write(javaCode + "\n");
+                        writer.write("    sender.sendMessage(\"ERROR=01, Invalid Subcommand.\");\n");
+                        writer.write("    return false;\n");
+                        writer.write("  }\n}");
+                        writer.close();
+                        File outDir = new File(Main.class.getClassLoader().getResource(packagePath).getFile());
+                        compiler.run(null, null, null, "-d", outDir.getAbsolutePath(), javaFile.getAbsolutePath());
+                        Class<?> customCommandClass = Class.forName(Main.class.getPackage().getName() + "." + className);
+
+                        // Instantiate and execute the custom command class
+                        Object customCommand = customCommandClass.getDeclaredConstructor().newInstance();
+                        Method onCommandMethod = customCommandClass.getDeclaredMethod("onCommand", CommandSender.class, Command.class, String.class, String[].class);
+                        boolean result = (boolean) onCommandMethod.invoke(customCommand, sender, command, label, args);
+                        return result;
+
+                    } catch (Exception e) {
+                        sender.sendMessage("ERROR=03, Failed to execute custom command.");
+                        e.printStackTrace();
+                        return false;
+                    }
+
+                } else {
+                    // Invalid command label
+                    sender.sendMessage("ERROR=01, Invalid command.");
+                    return false;
+                }
             }
+        }
+
+        return false;
+    }
+
+    private void saveConfig() {
+        try {
+            config.save(configFile);
+        } catch (Exception e) {
+            System.out.println("Failed to save config file");
+            e.printStackTrace();
+        }
+    }
         }
         return false;
     }
