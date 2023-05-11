@@ -299,7 +299,4 @@ public class CommandListener implements CommandExecutor {
             e.printStackTrace();
         }
     }
-        }
-        return false;
-    }
 }
