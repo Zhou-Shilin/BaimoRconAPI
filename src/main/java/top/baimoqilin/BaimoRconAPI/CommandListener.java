@@ -1,5 +1,6 @@
 package top.baimoqilin.BaimoRconAPI;
 
+import org.bukkit.plugin.java.JavaPlugin
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -293,6 +294,8 @@ public class CommandListener implements CommandExecutor {
     }
 
     private void saveConfig() {
+        Main plugin = JavaPlugin.getPlugin(Main.class);
+        FileConfiguration config = plugin.getConfig();
         try {
             config.save(configFile);
         } catch (Exception e) {
