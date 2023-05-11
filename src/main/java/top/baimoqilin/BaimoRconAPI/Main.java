@@ -29,5 +29,9 @@ public class Main extends JavaPlugin {
     public FileConfiguration getConfig() {
         return getConfig();
     }
+    
+    public void saveConfigFile() {
+        saveConfig();
+    }
 
 }
