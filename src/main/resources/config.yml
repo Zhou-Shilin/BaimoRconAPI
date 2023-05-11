@@ -1,0 +1,14 @@
+Commands:
+  example:
+    category: player
+    java: |
+        if (args[1].equalsIgnoreCase("example")) {
+                    Player target = Bukkit.getPlayer(args[2]);
+                    if (target != null) {
+                        Location loc = target.getLocation();
+                        sender.sendMessage("x=" + loc.getBlockX() + ", y=" + loc.getBlockY() + ", z=" + loc.getBlockZ());
+                        return true;
+                    } else {
+                        sender.sendMessage("ERROR=02, Player not found.");
+                        return false;
+                    }
