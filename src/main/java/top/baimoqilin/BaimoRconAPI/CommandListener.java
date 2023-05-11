@@ -13,6 +13,7 @@ import org.bukkit.Material;
 
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.configuration.file.FileConfiguration;
 
 import javax.tools.JavaCompiler;
 import javax.tools.ToolProvider;
