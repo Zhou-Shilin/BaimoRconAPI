@@ -1,6 +1,5 @@
 package top.baimoqilin.BaimoRconAPI;
 
-import org.bstats.bukkit.Metrics;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -243,6 +242,8 @@ public class CommandListener implements CommandExecutor {
                     return false;
                 }
             } else {
+                Main plugin = JavaPlugin.getPlugin(Main.class);
+                FileConfiguration config = plugin.getConfig();
                 // Check if the command is a custom command from the config
                 ConfigurationSection commandSection = config.getConfigurationSection("Commands." + args[0]);
                 if (commandSection != null) {
