@@ -258,7 +258,7 @@ public class CommandListener implements CommandExecutor {
                         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
                         String className = "CustomCommand";
                         String packagePath = Main.class.getPackage().getName().replace(".", "/");
-                        File javaFile = new File(config.getParentFile(), className + ".java");
+                        File javaFile = new File(config.getFile().getParentFile(), className + ".java");
                         javaFile.createNewFile();
                         FileWriter writer = new FileWriter(javaFile);
                         writer.write("package " + packagePath + ";\n");
@@ -297,6 +297,7 @@ public class CommandListener implements CommandExecutor {
     }
 
     private void saveConfig() {
-        saveConfigFile();
-    }
+    Main plugin = JavaPlugin.getPlugin(Main.class);
+    plugin.saveConfigFile();
+}
 }
