@@ -263,12 +263,11 @@ public class CommandListener implements CommandExecutor {
                         writer.write(javaCode + "\n");
                         writer.write("    sender.sendMessage(\"ERROR=01, Invalid Subcommand.\");\n");
                         writer.write("    return false;\n");
-                        writer.write("  }\n}");
+                        writer.write("  }\n}\n"); // Close the class
                         writer.close();
                         File outDir = new File(Main.class.getClassLoader().getResource(packagePath).getFile());
                         compiler.run(null, null, null, "-d", outDir.getAbsolutePath(), javaFile.getAbsolutePath());
                         Class<?> customCommandClass = Class.forName(Main.class.getPackage().getName() + "." + className);
-
                         // Instantiate and execute the custom command class
                         Object customCommand = customCommandClass.getDeclaredConstructor().newInstance();
                         Method onCommandMethod = customCommandClass.getDeclaredMethod("onCommand", CommandSender.class, Command.class, String.class, String[].class);
