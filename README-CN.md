@@ -14,10 +14,10 @@ BaimoRconAPI 是一个 Minecraft 插件，它允许rcon脚本使用命令来获�
 ## TODO
  - [x] 获取/修改玩家信息
  - [x] 获取/修改方块信息
+ - [x] 支持创建自定义API指令
  - [ ] 获取修改实体
  - [ ] 获取修改物品
  - [ ] 支持添加伪监听器
- - [ ] 支持添加自定义指令
 
 ## 安装
 1. 从[Releases](https://github.com/Zhou-Shilin/BaimoRconAPI/releases)下载最新版本。

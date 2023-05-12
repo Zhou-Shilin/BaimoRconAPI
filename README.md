@@ -16,10 +16,10 @@ The plugin is still in Alpha, there's only a few APIs and some of them are *Unte
 ## TODO
  - [x] Get/Modify player information
  - [x] Get/Modify block information
+ - [x] Support for adding custom commands
  - [ ] Get/Modify entity
  - [ ] Get/Modify item
  - [ ] Support for adding pseudo-listeners
- - [ ] Support for adding custom commands
 
 ## Installation
 1. Download the latest release from the [releases page](https://github.com/Zhou-Shilin/BaimoRconAPI/releases).
